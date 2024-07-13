@@ -1,0 +1,13 @@
+import cv2 as cv
+
+path=r""
+
+img = cv.imread(path + "miuul.jpg")
+type(img)
+
+#imshow
+cv.imshow("opencv_test",img)
+cv.waitKey(1)
+
+#Bütün sayfaları kapatır.
+cv.destroyAllWindows()

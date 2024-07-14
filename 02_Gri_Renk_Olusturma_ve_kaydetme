@@ -1,0 +1,25 @@
+import cv2 as cv
+
+path=r"input path" #tırnak arasına almak istediğimiz fotoğrafın yolunu yazarız.
+
+img = cv.imread(path + "2022-10-10-0-0001-01-01 00_00_00-52.jpg") #Bu işlemde ikinci argümana fotoğrafın ismini yazarız.
+
+img #Eğer Jupyter notebook veya Colab da çalışması için değişkeni yazmak yeterlidir.
+
+#Eğer pycharm vb. compiler kullanarak bilgisayarımızda açmak için bu kodu uygulayabiliriz.
+cv.imshow("opencv_test",img)
+cv.waitKey(1)
+
+#Griye çevirme işlemi
+gray=cv.cvtColor(img,cv.COLOR_BGR2GRAY) #cvtcolor ın ilk argümanı image ikinci argümanı yapacağımız işlemdir.
+
+#Görüntülemek için bu adımları izleriz.
+cv.imshow('gray',gray)
+cv.waitkey(1)
+
+#Dosya kaydetmek için bir path belirleriz.
+path='/content/sample_data'
+#imwrite Dosyayı kaydederiz
+cv.imwrite(path+"gray_opencv.png",gray)
+
+cv.imread(path+"gray_opencv.png",cv.IMREAD_GRAYSCALE) #Dosyayı okumak için bu işlemi yaparız.
